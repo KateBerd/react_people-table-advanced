@@ -1,5 +1,6 @@
 import { Person } from '../types';
 import { PersonRow } from './PersonRow';
+import { PeopleSort } from './PeopleSort';
 
 type Props = {
   people: Person[];
@@ -14,47 +15,19 @@ export const PeopleTable = ({ people }: Props) => {
       <thead>
         <tr>
           <th>
-            <span className="is-flex is-flex-wrap-nowrap">
-              Name
-              <a href="#/people?sort=name">
-                <span className="icon">
-                  <i className="fas fa-sort" />
-                </span>
-              </a>
-            </span>
+            <PeopleSort value={'name'} />
           </th>
 
           <th>
-            <span className="is-flex is-flex-wrap-nowrap">
-              Sex
-              <a href="#/people?sort=sex">
-                <span className="icon">
-                  <i className="fas fa-sort" />
-                </span>
-              </a>
-            </span>
+            <PeopleSort value={'sex'} />
           </th>
 
           <th>
-            <span className="is-flex is-flex-wrap-nowrap">
-              Born
-              <a href="#/people?sort=born&amp;order=desc">
-                <span className="icon">
-                  <i className="fas fa-sort-up" />
-                </span>
-              </a>
-            </span>
+            <PeopleSort value={'born'} />
           </th>
 
           <th>
-            <span className="is-flex is-flex-wrap-nowrap">
-              Died
-              <a href="#/people?sort=died">
-                <span className="icon">
-                  <i className="fas fa-sort" />
-                </span>
-              </a>
-            </span>
+            <PeopleSort value={'died'} />
           </th>
 
           <th>Mother</th>

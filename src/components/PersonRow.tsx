@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { Person } from '../../../react_people-table-basics/src/types';
-// eslint-disable-next-line max-len
-import { PersonLink } from '../../../react_people-table-basics/src/components/PersonLink';
+import { Person } from '../types';
+import { PersonLink } from './PersonLink';
 
 type Props = {
   person: Person;
