@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 import { useEffect, useState } from 'react';
 import { Loader } from '../components/Loader';
 import { Person } from '../types';
@@ -47,7 +48,7 @@ export const PeoplePage = () => {
 
       <div className="block">
         <div className="columns is-desktop is-flex-direction-row-reverse">
-          {!loading && !errorMessage && people.length > 0 && (
+          {!loading && !errorMessage && allPeople.length > 0 && (
             <div className="column is-7-tablet is-narrow-desktop">
               <PeopleFilters />
             </div>
@@ -63,11 +64,20 @@ export const PeoplePage = () => {
                 </p>
               )}
 
-              {!loading && !errorMessage && people.length === 0 && (
+              {!loading && !errorMessage && allPeople.length === 0 && (
                 <p data-cy="noPeopleMessage">
                   There are no people on the server
                 </p>
               )}
+
+              {!loading &&
+                !errorMessage &&
+                allPeople.length > 0 &&
+                people.length === 0 && (
+                  <p data-cy="noFilteredPeopleMessage">
+                    No people match the current criteria
+                  </p>
+                )}
 
               {!loading && !errorMessage && people.length > 0 && (
                 <PeopleTable people={people} />
