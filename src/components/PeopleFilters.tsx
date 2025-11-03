@@ -147,7 +147,7 @@ export const PeopleFilters = () => {
 
       <div className="panel-block">
         <SearchLink
-          params={{ sex: null, query: null, centuries: [] }}
+          params={{ sex: null, query: null, centuries: null }}
           className="button is-link is-outlined is-fullwidth"
         >
           Reset all filters

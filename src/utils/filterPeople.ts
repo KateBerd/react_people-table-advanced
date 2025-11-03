@@ -16,8 +16,8 @@ export const getFilteredPeople = (
     filtered = filtered.filter(
       person =>
         person.name.toLowerCase().includes(query.toLowerCase()) ||
-        person.motherName?.toLowerCase().includes(query.toLowerCase()) ||
-        person.fatherName?.toLowerCase().includes(query.toLowerCase()),
+        (person.motherName || '').toLowerCase().includes(query.toLowerCase()) ||
+        (person.fatherName || '').toLowerCase().includes(query.toLowerCase()),
     );
   }
 
